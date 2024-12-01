@@ -1,10 +1,12 @@
-# Menggunakan image Nginx sebagai base image
+Dockerfile
 FROM nginx:alpine
 
-# Menyalin file website (HTML, CSS, dan JavaScript) ke direktori Nginx
-COPY . /usr/share/nginx/html
+COPY *.html /usr/share/nginx/html/
+COPY css /usr/share/nginx/html/css/
+COPY js /usr/share/nginx/html/js/
+COPY images /usr/share/nginx/html/images/
 
-# Expose port 80 (Nginx default)
+ENV PORT 80
 EXPOSE 80
 
-# Tidak perlu menjalankan perintah CMD karena Nginx secara otomatis akan berjalan
+CMD ["nginx", "-g", "daemon off;"]
