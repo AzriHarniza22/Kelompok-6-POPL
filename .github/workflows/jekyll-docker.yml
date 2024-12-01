@@ -29,4 +29,4 @@ jobs:
       uses: docker/build-push-action@v6
       with:
         push: true
-        tags: yazid22/kelompok6-popl:latest
+        tags: azriharniza/kelompok-6-popl:latest
